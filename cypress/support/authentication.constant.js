@@ -14,3 +14,4 @@ export const loginpageerrormessage= ''
 
 export const teslaURL= 'https://www.tesla.com/'
 export const modelSURL = 'https://www.tesla.com/models'
+export const comparePageUrl = 'https://www.tesla.com/compare'

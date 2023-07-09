@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "test1": "cypress run -b chrome --headless --spec 'cypress/e2e/Day1/checkboxes.spec.cy.js'"
+    "test1": "cypress run -b chrome --headless --spec 'cypress/e2e/Day1/checkboxes.spec.cy.js'",
+    "teslaModelS": "npx cypress run --record --key 0a6bd23f-a597-4e66-99ac-e575c4ffd76f --spec 'cypress/e2e/Day3/tesla.spec.cy.js'"
   },
   "author": "Mehmet",
   "license": "ISC",

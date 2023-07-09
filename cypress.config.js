@@ -2,6 +2,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'p6whqh',
   e2e: {
     baseUrl:"https://demoblaze.com/"
     //setupNodeEvents(on, config) {
