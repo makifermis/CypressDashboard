@@ -9,6 +9,9 @@ export class github{
     }
 
     navigateToMainPage(){
+        cy.contains("Sign up").click()
+        cy.get('.font-mktg > .color-fg-on-emphasis').click()
+        cy.url().should('include',githubLoginUrl)
         cy.go('back')
     }
 
