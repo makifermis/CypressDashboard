@@ -36,10 +36,40 @@ Cypress.Commands.add('login_demoBlaze', (username,password) => {
         cy.visit('/');
     cy.get('#login2').click();
     cy.get('#loginusername').should('be.visible');
-    cy.get('#loginusername').clear().type('test')
-    cy.get('#loginpassword').clear().type('test')
+    cy.get('#loginusername').clear().type(username)
+    cy.get('#loginpassword').clear().type(password)
     cy.get('[onclick="logIn()"]').click();
     cy.get('#logout2').should('be.visible');
+
+    },
+    {
+        cacheAcrossSpecs:true
+    })
+    
+    
+
+})
+
+Cypress.Commands.add('navigate_etsy', () => {
+
+    cy.session([], () => {
+
+        cy.visit('https://www.etsy.com/', {
+            onBeforeLoad(win) {
+              Object.defineProperty(win.navigator, 'language', { value: 'en-GB' });
+              Object.defineProperty(win.navigator, 'languages', { value: ['en'] });
+              Object.defineProperty(win.navigator, 'accept_languages', { value: ['en'] });
+            },
+            headers: {
+              'Accept-Language': 'en',
+            },
+
+
+        });
+
+        cy.wait(1000)
+
+        cy.get('[class="wt-btn wt-btn--filled wt-mb-xs-0"]').contains('Accept').click({force: true})
 
     },
     {
